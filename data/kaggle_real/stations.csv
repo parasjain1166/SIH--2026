@@ -1,0 +1,21 @@
+station_code,station_name,division,zone,state,latitude,longitude,km_from_origin,has_yard,platforms
+NDLS,New Delhi,Delhi,NR,Delhi,28.6139,77.2090,0.0,True,16
+ANVT,Anand Vihar Terminal,Delhi,NR,Delhi,28.6502,77.3150,12.5,True,7
+SBB,Sahibabad Jn,Delhi,NR,Uttar Pradesh,28.6730,77.3480,19.8,False,5
+GZB,Ghaziabad Jn,Delhi,NR,Uttar Pradesh,28.6692,77.4538,25.4,True,6
+MIU,Maripat,Delhi,NR,Uttar Pradesh,28.5910,77.5340,35.8,False,3
+DER,Dadri,Delhi,NR,Uttar Pradesh,28.5490,77.5610,42.1,True,4
+AJR,Ajaibpur,Delhi,NR,Uttar Pradesh,28.4890,77.6210,50.3,False,3
+DKDE,Dankaur,Delhi,NR,Uttar Pradesh,28.3740,77.6940,58.7,False,3
+WAIR,Wair,Delhi,NR,Uttar Pradesh,28.2910,77.7820,70.2,False,2
+CHL,Chola,Delhi,NR,Uttar Pradesh,28.2140,77.8540,77.6,False,3
+KRJ,Khurja Jn,Delhi,NR,Uttar Pradesh,28.2580,77.8570,89.4,True,5
+SOM,Somna,Prayagraj,NCR,Uttar Pradesh,28.0120,77.9820,110.1,False,3
+ALJN,Aligarh Jn,Prayagraj,NCR,Uttar Pradesh,27.8974,78.0880,131.2,True,7
+HRS,Hathras Jn,Prayagraj,NCR,Uttar Pradesh,27.5960,78.0530,150.0,False,4
+TDL,Tundla Jn,Prayagraj,NCR,Uttar Pradesh,27.2080,78.2390,204.0,True,7
+ETW,Etawah Jn,Prayagraj,NCR,Uttar Pradesh,26.7760,79.0230,296.0,True,5
+CNB,Kanpur Central,Prayagraj,NCR,Uttar Pradesh,26.4540,80.3500,436.0,True,10
+FTP,Fatehpur,Prayagraj,NCR,Uttar Pradesh,25.9260,80.8130,514.0,False,4
+PRYJ,Prayagraj Jn,Prayagraj,NCR,Uttar Pradesh,25.4358,81.8463,630.0,True,10
+DDU,Pt Deen Dayal Upadhyaya Jn,Pt Deen Dayal Upadhyaya,ECR,Uttar Pradesh,25.2790,83.1180,783.0,True,8

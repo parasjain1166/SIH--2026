@@ -1,0 +1,8 @@
+task_id,task_name,task_category,section_id,track_line,start_km,end_km,station_code,required_duration_mins,safety_criticality,asset_degradation_score,urgency_days_overdue,gmt_accumulated,speed_restriction_if_deferred_kmh,requires_traffic_block,requires_power_block,required_machines,required_gangs,horizon,status
+TMS_KAG_001,Emergency IMR Rail Flaw Renewal KM 26.2,USFD_IMR_RAIL_FLAW,SEC_GZB_MIU_UP,UP,26.0,26.5,GZB,120,9.9,9.5,4,62.4,20,True,False,WELD_GENSET_01,PWAY_GANG_01,DAILY,PENDING
+TMS_KAG_002,CSM Track Tamping & Alignment KM 26.0-32.0,TRACK_TAMPING_CSM,SEC_GZB_MIU_UP,UP,26.0,32.0,GZB,210,8.2,8.4,12,62.4,50,True,False,CSM_TAMPING_01,MACHINE_CREW_01,DAILY,PENDING
+TMS_KAG_003,Turnout 102 Diamond Crossing Overhaul,POINTS_CROSSING_TAMPING,SEC_DER_AJR_UP,UP,42.0,43.2,DER,180,8.6,8.1,9,55.0,30,True,False,UNIMAT_TURNOUT_02,PWAY_GANG_02,WEEKLY,PENDING
+TMS_KAG_004,BCM Deep Screening of Track Bed,BALLAST_CLEANING_BCM,SEC_DKDE_WAIR_DN,DN,60.0,64.0,DKDE,300,7.8,8.8,18,74.2,30,True,True,BCM_MACHINE_03,BCM_HEAVY_CREW,MONTHLY,PENDING
+TMS_KAG_005,CWR Destressing & Rail Tensor Clamping,CWR_DESTRESSING,SEC_KRJ_SOM_DN,DN,94.0,98.0,KRJ,180,8.4,7.8,7,78.1,45,True,False,RAIL_TENSOR_01,PWAY_GANG_03,WEEKLY,PENDING
+TMS_KAG_006,Emergency Weld Defect OBS Clamp Removal,USFD_IMR_RAIL_FLAW,SEC_SOM_ALJN_UP,UP,118.5,119.0,SOM,90,9.7,9.2,2,82.0,30,True,False,WELD_GENSET_01,PWAY_GANG_01,DAILY,PENDING
+TMS_KAG_007,Rail Grinding RGM Profile Restoration,RAIL_GRINDING_RGM,SEC_ALJN_HRS_DN,DN,135.0,142.0,ALJN,240,7.1,7.5,15,68.0,None,True,False,RGM_GRINDER_01,RGM_CREW,WEEKLY,PENDING

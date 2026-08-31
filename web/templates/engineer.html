@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RailBlock AI - Engineer Portal</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script>tailwind.config={theme:{extend:{colors:{rail:{dark:'#0B1120',card:'#151F32',border:'#23324D'}}}}}</script>
+</head>
+<body class="min-h-screen bg-rail-dark text-slate-100">
+<header class="sticky top-0 z-20 bg-rail-card/95 border-b border-rail-border px-5 py-3">
+  <div class="max-w-7xl mx-auto flex items-center justify-between gap-4">
+    <div class="flex items-center gap-3">
+      <a href="/" class="w-9 h-9 rounded-lg bg-slate-900 border border-slate-700 flex items-center justify-center hover:border-sky-500"><i class="fa-solid fa-arrow-left"></i></a>
+      <div>
+        <h1 class="font-bold text-lg">RailBlock <span class="text-sky-400">AI</span> <span class="ml-2 text-xs px-2 py-0.5 rounded-full bg-sky-500/15 text-sky-300 border border-sky-500/30">ENGINEER PORTAL</span></h1>
+        <p class="text-xs text-slate-400">Field maintenance request & instruction workspace</p>
+      </div>
+    </div>
+    <div class="hidden md:flex items-center gap-2 text-xs font-mono text-slate-400"><i class="fa-solid fa-database text-emerald-400"></i> SQLite persistence</div>
+  </div>
+</header>
+
+<main class="max-w-7xl mx-auto p-5 space-y-6">
+  <section class="grid lg:grid-cols-3 gap-4">
+    <div class="lg:col-span-2 bg-rail-card rounded-xl border border-rail-border p-5">
+      <div class="flex items-center justify-between gap-3 mb-4">
+        <div>
+          <h2 class="text-lg font-bold"><i class="fa-solid fa-file-circle-plus text-sky-400 mr-2"></i>Submit Maintenance Requirement</h2>
+          <p class="text-xs text-slate-400 mt-1">This request goes to the officer inbox. It does not enter the optimizer until officer approval.</p>
+        </div>
+      </div>
+
+      <form id="engineer-form" class="grid md:grid-cols-2 gap-4">
+        <label class="text-xs text-slate-400">Engineer name
+          <input id="eng-name" required value="Demo Engineer" class="mt-1 w-full rounded-lg bg-slate-950 border border-slate-700 px-3 py-2 text-sm text-white">
+        </label>
+        <label class="text-xs text-slate-400">Department
+          <select id="eng-dept" class="mt-1 w-full rounded-lg bg-slate-950 border border-slate-700 px-3 py-2 text-sm text-white">
+            <option value="TMS">TMS - Track / Engineering</option>
+            <option value="SMMS">SMMS - Signal & Telecom</option>
+            <option value="TDMS">TDMS - Traction / OHE</option>
+          </select>
+        </label>
+        <label class="text-xs text-slate-400">Station
+          <select id="eng-station" required class="mt-1 w-full rounded-lg bg-slate-950 border border-slate-700 px-3 py-2 text-sm text-white"></select>
+        </label>
+        <label class="text-xs text-slate-400">Adjacent track section
+          <select id="eng-section" required class="mt-1 w-full rounded-lg bg-slate-950 border border-slate-700 px-3 py-2 text-sm text-white"></select>
+        </label>
+        <label class="md:col-span-2 text-xs text-slate-400">Maintenance / defect description
+          <input id="eng-task" required placeholder="e.g. Rail flaw renewal / Point machine overhaul / OHE tuning" class="mt-1 w-full rounded-lg bg-slate-950 border border-slate-700 px-3 py-2 text-sm text-white">
+        </label>
+        <label class="text-xs text-slate-400">Start KM
+          <input id="eng-start-km" type="number" step="0.1" required class="mt-1 w-full rounded-lg bg-slate-950 border border-slate-700 px-3 py-2 text-sm text-white">
+        </label>
+        <label class="text-xs text-slate-400">End KM
+          <input id="eng-end-km" type="number" step="0.1" required class="mt-1 w-full rounded-lg bg-slate-950 border border-slate-700 px-3 py-2 text-sm text-white">
+        </label>
+        <label class="text-xs text-slate-400">Required block duration (minutes)
+          <input id="eng-duration" type="number" min="30" value="120" class="mt-1 w-full rounded-lg bg-slate-950 border border-slate-700 px-3 py-2 text-sm text-white">
+        </label>
+        <label class="text-xs text-slate-400">Planning horizon
+          <select id="eng-horizon" class="mt-1 w-full rounded-lg bg-slate-950 border border-slate-700 px-3 py-2 text-sm text-white"><option>DAILY</option><option>WEEKLY</option><option>MONTHLY</option></select>
+        </label>
+        <label class="text-xs text-slate-400">Safety criticality (1-10)
+          <input id="eng-safety" type="number" min="1" max="10" step="0.1" value="8" class="mt-1 w-full rounded-lg bg-slate-950 border border-slate-700 px-3 py-2 text-sm text-white">
+        </label>
+        <label class="text-xs text-slate-400">Asset degradation (1-10)
+          <input id="eng-deg" type="number" min="1" max="10" step="0.1" value="7" class="mt-1 w-full rounded-lg bg-slate-950 border border-slate-700 px-3 py-2 text-sm text-white">
+        </label>
+        <label class="text-xs text-slate-400">Days overdue
+          <input id="eng-overdue" type="number" min="0" value="2" class="mt-1 w-full rounded-lg bg-slate-950 border border-slate-700 px-3 py-2 text-sm text-white">
+        </label>
+        <label class="text-xs text-slate-400">GMT accumulated
+          <input id="eng-gmt" type="number" min="0" step="0.1" value="50" class="mt-1 w-full rounded-lg bg-slate-950 border border-slate-700 px-3 py-2 text-sm text-white">
+        </label>
+        <label class="text-xs text-slate-400">TSR if deferred (km/h, optional)
+          <input id="eng-tsr" type="number" min="0" placeholder="e.g. 30" class="mt-1 w-full rounded-lg bg-slate-950 border border-slate-700 px-3 py-2 text-sm text-white">
+        </label>
+        <label class="text-xs text-slate-400">Resources / machine IDs (comma separated)
+          <input id="eng-machines" placeholder="e.g. CSM_01, WELD_01" class="mt-1 w-full rounded-lg bg-slate-950 border border-slate-700 px-3 py-2 text-sm text-white">
+        </label>
+        <div class="md:col-span-2 grid sm:grid-cols-3 gap-3 p-3 rounded-lg bg-slate-950/60 border border-slate-800 text-xs">
+          <label class="flex items-center gap-2"><input id="eng-traffic" type="checkbox" checked> Traffic block</label>
+          <label class="flex items-center gap-2"><input id="eng-power" type="checkbox"> Power block</label>
+          <label class="flex items-center gap-2"><input id="eng-disconnection" type="checkbox"> S&T disconnection</label>
+        </div>
+        <div class="md:col-span-2 flex items-center gap-3">
+          <button class="px-5 py-2.5 rounded-lg bg-sky-500 hover:bg-sky-400 text-slate-950 font-bold text-sm"><i class="fa-solid fa-paper-plane mr-2"></i>Send to Officer</button>
+          <span id="submit-status" class="text-xs text-slate-400"></span>
+        </div>
+      </form>
+    </div>
+
+    <aside class="bg-rail-card rounded-xl border border-rail-border p-5 space-y-4">
+      <h3 class="font-bold">What happens after submit?</h3>
+      <div class="space-y-3 text-xs text-slate-400">
+        <div class="p-3 rounded-lg bg-slate-950 border border-slate-800"><span class="text-sky-300 font-bold">1. SQLite</span><br>Request is stored permanently.</div>
+        <div class="p-3 rounded-lg bg-slate-950 border border-slate-800"><span class="text-amber-300 font-bold">2. AI pre-triage</span><br>Priority score is calculated for officer attention.</div>
+        <div class="p-3 rounded-lg bg-slate-950 border border-slate-800"><span class="text-purple-300 font-bold">3. Officer review</span><br>Timetable, free windows and shadow opportunity are checked.</div>
+        <div class="p-3 rounded-lg bg-slate-950 border border-slate-800"><span class="text-emerald-300 font-bold">4. Instruction</span><br>Approved/rejected instruction appears below.</div>
+      </div>
+      <div id="ai-preview" class="hidden p-4 rounded-lg border border-amber-500/30 bg-amber-500/5 text-xs"></div>
+    </aside>
+  </section>
+
+  <section class="bg-rail-card rounded-xl border border-rail-border p-5">
+    <div class="flex flex-col md:flex-row md:items-center justify-between gap-3 mb-4">
+      <div><h2 class="text-lg font-bold"><i class="fa-solid fa-inbox text-emerald-400 mr-2"></i>My Department Requests</h2><p class="text-xs text-slate-400">Officer decisions and instructions are read directly from SQLite.</p></div>
+      <button onclick="loadEngineerRequests()" class="text-xs px-3 py-2 rounded bg-slate-900 border border-slate-700 hover:border-sky-500"><i class="fa-solid fa-rotate mr-1"></i>Refresh</button>
+    </div>
+    <div id="engineer-requests" class="space-y-3 text-sm text-slate-400">Loading...</div>
+  </section>
+</main>
+<script src="/static/js/engineer_portal.js"></script>
+</body>
+</html>

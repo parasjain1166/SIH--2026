@@ -1,0 +1,6 @@
+task_id,task_name,task_category,section_id,track_line,start_km,end_km,station_code,required_duration_mins,safety_criticality,asset_degradation_score,urgency_days_overdue,gmt_accumulated,requires_traffic_block,requires_power_block,required_machines,required_gangs,required_power_cut_substation,horizon,status
+TDMS_KAG_001,OHE Cantilever Tuning & AOH by Tower Wagon,OHE_AOH_TOWER_WAGON,SEC_GZB_MIU_UP,UP,26.0,30.0,GZB,180,8.5,8.4,11,62.4,True,True,TOWER_WAGON_TRD_01,TRD_OHE_CREW_01,TSS_GZB_25KV,DAILY,PENDING
+TDMS_KAG_002,Burnt OHE Jumper & Contact Wire Splicing,CONTACT_WIRE_RENEWAL,SEC_KRJ_SOM_DN,DN,93.5,95.0,KRJ,150,9.4,9.1,5,78.1,True,True,TOWER_WAGON_TRD_02,TRD_HEAVY_CREW,TSS_KRJ_25KV,DAILY,PENDING
+TDMS_KAG_003,PTFE Neutral Section Arc Horn Gap Tuning,NEUTRAL_SECTION_MAINT,SEC_DER_AJR_UP,UP,42.5,43.5,DER,120,8.9,8.6,4,55.0,True,True,TOWER_WAGON_TRD_01,TRD_OHE_CREW_02,TSS_DER_25KV,DAILY,PENDING
+TDMS_KAG_004,Hazardous Tree Branch Trimming (25kV Feeder),TREE_TRIMMING_HIGH_VOLTAGE,SEC_DKDE_WAIR_DN,DN,61.0,63.0,DKDE,120,7.5,6.9,8,74.2,True,True,,TRD_TREE_GANG,TSS_DER_25KV,DAILY,PENDING
+TDMS_KAG_005,25kV Vacuum Circuit Breaker Substation POH,SUBSTATION_CB_OVERHAUL,SEC_ALJN_HRS_DN,DN,131.0,131.5,ALJN,180,8.7,8.0,19,68.0,True,True,,PSI_SPECIALIST_TEAM,TSS_ALJN_25KV,MONTHLY,PENDING

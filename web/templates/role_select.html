@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RailBlock AI - Choose Portal</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script>
+    tailwind.config={theme:{extend:{colors:{rail:{dark:'#0B1120',card:'#151F32',border:'#23324D'}}}}}
+  </script>
+</head>
+<body class="min-h-screen bg-rail-dark text-slate-100 flex items-center justify-center p-6">
+  <div class="max-w-5xl w-full space-y-8">
+    <div class="text-center">
+      <div class="mx-auto w-16 h-16 rounded-2xl bg-gradient-to-tr from-sky-500 to-indigo-600 flex items-center justify-center shadow-xl">
+        <i class="fa-solid fa-train-subway text-3xl"></i>
+      </div>
+      <h1 class="mt-4 text-3xl font-bold">RailBlock <span class="text-sky-400 font-mono">AI</span></h1>
+      <p class="text-slate-400 mt-2">Integrated maintenance coordination prototype</p>
+      <div id="db-status" class="mt-3 text-xs font-mono text-slate-500">Checking SQLite...</div>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-6">
+      <a href="/engineer" class="group block rounded-2xl bg-rail-card border border-sky-500/30 p-7 hover:border-sky-400 transition shadow-lg">
+        <div class="w-12 h-12 rounded-xl bg-sky-500/15 text-sky-300 flex items-center justify-center text-xl"><i class="fa-solid fa-helmet-safety"></i></div>
+        <h2 class="text-2xl font-bold mt-5">Engineer Portal</h2>
+        <p class="text-slate-400 mt-2 text-sm">TMS, SMMS and TDMS field engineers submit maintenance requirements and receive officer instructions.</p>
+        <div class="mt-5 text-sm text-sky-300 font-semibold">Open Engineer Portal <i class="fa-solid fa-arrow-right ml-1 group-hover:translate-x-1 transition"></i></div>
+      </a>
+
+      <a href="/officer" class="group block rounded-2xl bg-rail-card border border-purple-500/30 p-7 hover:border-purple-400 transition shadow-lg">
+        <div class="w-12 h-12 rounded-xl bg-purple-500/15 text-purple-300 flex items-center justify-center text-xl"><i class="fa-solid fa-user-shield"></i></div>
+        <h2 class="text-2xl font-bold mt-5">Officer Portal</h2>
+        <p class="text-slate-400 mt-2 text-sm">Review engineer requests, inspect AI priority/timetable evidence, approve or reject, and coordinate the final block plan.</p>
+        <div class="mt-5 text-sm text-purple-300 font-semibold">Open Officer Portal <i class="fa-solid fa-arrow-right ml-1 group-hover:translate-x-1 transition"></i></div>
+      </a>
+    </div>
+
+    <div class="rounded-xl border border-slate-800 bg-slate-950/60 p-4 text-xs text-slate-400 text-center">
+      Prototype workflow: <span class="text-white">Engineer request</span> → SQLite → <span class="text-amber-300">AI triage</span> → Officer decision → Approved task enters optimizer → Instruction back to engineer.
+    </div>
+  </div>
+<script>
+fetch('/api/portal/summary').then(r=>r.json()).then(d=>{
+  document.getElementById('db-status').textContent=`SQLite connected • ${d.requests.total} engineer requests • ${d.operational_tasks} operational tasks`;
+}).catch(()=>document.getElementById('db-status').textContent='SQLite status unavailable');
+</script>
+</body>
+</html>

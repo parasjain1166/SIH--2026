@@ -1,0 +1,6 @@
+task_id,task_name,task_category,section_id,track_line,start_km,end_km,station_code,required_duration_mins,safety_criticality,asset_degradation_score,urgency_days_overdue,gmt_accumulated,requires_traffic_block,requires_st_disconnection,required_gangs,horizon,status
+SMMS_KAG_001,Point Machine 104A/B POH & Disconnection,POINT_MACHINE_OVERHAUL,SEC_GZB_MIU_UP,UP,25.8,26.4,GZB,150,8.9,8.2,8,62.4,True,True,SNT_MAINT_GANG_01,DAILY,PENDING
+SMMS_KAG_002,DC Track Circuit Relay Overhaul & Tuning,TRACK_CIRCUIT_CALIBRATION,SEC_DER_AJR_UP,UP,42.2,43.0,DER,90,7.8,7.3,11,55.0,True,True,SNT_MAINT_GANG_02,DAILY,PENDING
+SMMS_KAG_003,MSDAC Digital Axle Counter Calibration,AXLE_COUNTER_MSDAC_TEST,SEC_DKDE_WAIR_DN,DN,61.0,62.0,DKDE,120,8.5,8.0,6,74.2,True,True,SNT_TECH_GANG_01,WEEKLY,PENDING
+SMMS_KAG_004,AFTC Glued Insulated Joint Maintenance,TRACK_CIRCUIT_CALIBRATION,SEC_KRJ_SOM_DN,DN,94.0,94.8,KRJ,90,8.1,7.9,5,78.1,True,True,SNT_MAINT_GANG_02,DAILY,PENDING
+SMMS_KAG_005,Electronic Interlocking Executive Diagnostic,ELECTRONIC_INTERLOCKING_POH,SEC_ALJN_HRS_DN,DN,131.2,132.0,ALJN,180,9.2,7.6,14,68.0,True,True,EI_SPECIALIST_TEAM,MONTHLY,PENDING

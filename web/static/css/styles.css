@@ -1,0 +1,89 @@
+/* RailBlock AI - Modern Railway Operations Theme */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap');
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.font-mono {
+    font-family: 'JetBrains+Mono', monospace;
+}
+
+/* Custom Scrollbars */
+.scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-track {
+    background: #0b1120;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+    background: #23324d;
+    border-radius: 4px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb:hover {
+    background: #38bdf8;
+}
+
+/* Tab active state */
+.tab-btn.active-tab {
+    background: linear-gradient(135deg, rgba(56, 189, 248, 0.2) 0%, rgba(99, 102, 241, 0.2) 100%);
+    color: #38bdf8;
+    border: 1px solid rgba(56, 189, 248, 0.4);
+    font-weight: 600;
+}
+
+/* Glowing Pulsing Animations */
+@keyframes pulseGlow {
+    0%, 100% {
+        box-shadow: 0 0 15px rgba(56, 189, 248, 0.4);
+    }
+    50% {
+        box-shadow: 0 0 25px rgba(56, 189, 248, 0.8);
+    }
+}
+
+.shadow-block-glow {
+    animation: pulseGlow 2.5s infinite;
+}
+
+/* Tooltip Styling */
+.rail-tooltip {
+    position: relative;
+}
+
+.rail-tooltip:hover::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #0f172a;
+    color: #e2e8f0;
+    padding: 4px 8px;
+    font-size: 11px;
+    font-family: 'JetBrains+Mono', monospace;
+    white-space: nowrap;
+    border-radius: 4px;
+    border: 1px solid #334155;
+    z-index: 100;
+    pointer-events: none;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+}
+
+/* Track schematic hover effects */
+.track-segment:hover {
+    stroke-width: 5px;
+    cursor: pointer;
+    filter: drop-shadow(0 0 6px rgba(56, 189, 248, 0.8));
+}
+
+.station-node:hover circle {
+    r: 8;
+    fill: #38bdf8;
+    cursor: pointer;
+}
